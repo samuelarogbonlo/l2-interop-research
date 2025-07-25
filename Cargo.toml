@@ -1,0 +1,30 @@
+[package]
+name = "l2-interop-research"
+version = "0.1.0"
+edition = "2021"
+authors = ["Research Team <research@example.org>"]
+description = "Research project for intent-based L2 interoperability"
+license = "MIT"
+repository = "https://github.com/username/l2-interop-research"
+keywords = ["ethereum", "layer2", "interoperability", "research", "blockchain"]
+categories = ["cryptography", "simulation"]
+
+[dependencies]
+# Research and analysis dependencies only
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.0", features = ["derive"] }
+
+# Research-specific dependencies
+plotters = "0.3"  # For research data visualization
+csv = "1.1"       # For data analysis
+rand = "0.8"      # For simulation studies
+
+[dev-dependencies]
+criterion = "0.5"  # For benchmarking research implementations
+
+[features]
+default = []
+simulation = ["plotters", "csv"]
+analysis = ["csv"]
